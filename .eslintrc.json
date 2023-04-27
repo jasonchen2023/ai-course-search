@@ -70,7 +70,8 @@
     "react/jsx-one-expression-per-line": 0,
     "no-multiple-empty-lines": 0,
     "react/function-component-definition": 0,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "import/no-extraneous-dependencies": 1
   },
   "plugins": [
     "react"
