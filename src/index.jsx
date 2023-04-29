@@ -6,7 +6,7 @@ import './style.scss';
 // } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import App from './components/app';
+import App from './components/App';
 import rootReducer from './reducers';
 // const App = () => <div className="test">All the REACT are belong to us!</div>;
 
