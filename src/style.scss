@@ -1,0 +1,41 @@
+$fontcolor:  rgb(10%, 10%, 10%);
+$backgroundcolor: rgb(98%, 98%, 98%);
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: $fontcolor;
+  background-color: $backgroundcolor;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// #home {
+//   position: absolute;
+//   height: 800%; 
+//   width: 80%; 
+//   top: 10%; 
+//   left: 10%; 
+//   background-color: #FFCC00; 
+//   display: flex;
+//   justify-content: center;
+// }
+
+#search-bar {
+  margin-bottom: 20px;
+  background-color: red;
+  // width: 70%; 
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+
+  input {
+    font-size: 1.5em;
+    border-radius: .25em;
+    padding: 5px;
+    width: 80%;
+    margin: auto;
+  }
+}
