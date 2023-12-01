@@ -1,60 +1,58 @@
-import React from 'react';
-import {
-  BrowserRouter, Routes, Route, NavLink, useParams,
-} from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
-import Home from './home';
+import React, { useCallback, useEffect, useState } from 'react';
+import debounce from 'lodash.debounce';
+import { useDispatch } from 'react-redux';
+import SearchBar from './search_bar';
+import sendQuery from '../services/query';
+import CourseCard from './card';
+import CourseList from './course_list';
 
 const App = (props) => {
-  return (
-    <BrowserRouter>
-      <div>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/test/:id" element={<Test />} />
-          <Route path="*" element={<FallBack />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-};
-export default App;
+  const [courseList, setCourseList] = useState([]);
 
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
 
-const FallBack = (props) => {
-  return <div>URL Not Found</div>;
-};
+  const search = async (searchQuery) => {
+    const data = {
+      query: searchQuery,
+      k: 10,
+    };
+    const res = await sendQuery(data);
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
+    // const res = [
+    //   {
+    //     id: '489',
+    //     score: 0.815311491,
+    //     values: [],
+    //     metadata: {
+    //       'Course Number': 1,
+    //       Department: 'FREN',
+    //       Description: '',
+    //       Instructor: 'Maureen Doyle',
+    //       Title: 'Introductory French I',
+    //     },
+    //   },
+    //   {
+    //     id: '490',
+    //     score: 0.809830427,
+    //     values: [],
+    //     metadata: {
+    //       'Course Number': 2,
+    //       Department: 'FREN',
+    //       Description: '',
+    //       Instructor: 'Kelly McConnell',
+    //       Title: 'Introductory French II',
+    //     },
+    //   },
+    // ];
+    setCourseList(res);
+  };
 
-const Welcome = (props) => {
+  const debouncedSearch = useCallback(debounce(search, 500), []);
+
   return (
     <div>
-      Welcome
-      <Counter />
-      <Controls />
+      <SearchBar search={debouncedSearch} />
+      <CourseList courses={courseList} />
     </div>
   );
 };
-
-const Test = (props) => {
-  const { id } = useParams();
-  return <div> ID: {id} </div>;
-};
+export default App;

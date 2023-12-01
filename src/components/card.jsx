@@ -10,22 +10,21 @@ const CourseCard = ({
   department, courseNumber, title, instructor, description,
 }) => {
   return (
-    <Card variant="outlined" sx={{ width: '100%' }}>
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {department} {courseNumber}: {title}
-        </Typography>
-        <Typography variant="h7" sx={{ mb: 1.5 }} color="text.secondary">
-          Instructor: {instructor}
-        </Typography>
-        <Typography variant="body2">
-          {description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <div className="card">
+      <Card variant="outlined" sx={{ width: '100%' }}>
+        <CardContent>
+          <Typography variant="h5" component="div">
+            {department} {courseNumber}: {title}
+          </Typography>
+          <Typography variant="h7" sx={{ mb: 1.5 }} color="text.secondary">
+            Instructor: {instructor}
+          </Typography>
+          <Typography variant="body2">
+            {description}
+          </Typography>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 
