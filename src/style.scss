@@ -1,15 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 $fontcolor:  rgb(10%, 10%, 10%);
 $backgroundcolor: rgb(98%, 98%, 98%);
 
 
 body {
-  font-family: "Roboto", sans-serif;
   color: $fontcolor;
-  // background-color: $backgroundcolor;
-  background-color: peachpuff;
+  background-color: $backgroundcolor;
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color:black;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  #website-name {
+    font-size: 50px;
+  }
+}
+
+.green-text {
+  color: green;
+}
+
+#filter-button {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#filter-button:hover {
+  background-color: #dbdbdb;
 }
 
 #course-list {
@@ -17,24 +65,54 @@ body {
   flex-direction: column;
 }
 
-#search-bar {
-  margin-bottom: 20px;
-  margin-top: 100px;
+#search-div {
+  width: 60%;
+  margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search-bar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: none;
+  width: calc(100% - 150px);
 
   input {
-    font-size: 1.5em;
-    border-radius: .25em;
-    padding: 5px;
-    width: 60%;
-    margin: auto;
+    font-size: 1.2em;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    border: 2px solid grey;
   }
 }
 
 .card {
-  width: 65%;
+  width: 60%;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;;
+}
+
+
+.instructor {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: grey;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.divider {
+  width: 60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
