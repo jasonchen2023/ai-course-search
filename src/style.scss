@@ -2,7 +2,7 @@
 
 $fontcolor:  rgb(10%, 10%, 10%);
 $backgroundcolor: rgb(98%, 98%, 98%);
-
+$mat-blue: #1976d2;
 
 body {
   color: $fontcolor;
@@ -31,9 +31,12 @@ a:hover {
   text-decoration: underline;
 }
 
-#header {
+#container {
   width: 60%;
   margin: auto;
+}
+
+#header {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -46,17 +49,68 @@ a:hover {
   color: green;
 }
 
-#filter-button {
+.button {
   display: flex;
   align-items: center;
   padding: 6px 20px;
   border: 2px solid grey;
   border-radius: 5px;
-  background-color: white;
   cursor: pointer;
 }
 
-#filter-button:hover {
+.filter-button:hover {
+  background-color: #dbdbdb;
+}
+
+#filterContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.filter-title {
+  margin-bottom: 10px;
+}
+
+.checkbox-container {
+  margin-bottom: 20px;
+}
+
+.checkbox-input {
+  cursor: pointer;
+}
+
+
+#filter-button-container {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.apply-button {
+  background-color: $mat-blue;
+  color: white;
+  border: 0px;
+  margin-left: 20px;
+  padding: 10px 20px;
+}
+
+.apply-button:hover {
+  background-color: #1e88e5;
+  padding: 10px 20px;
+}
+
+.cancel-button {
+  background-color: white;
+}
+
+.cancel-button:hover {
   background-color: #dbdbdb;
 }
 
@@ -66,8 +120,6 @@ a:hover {
 }
 
 #search-div {
-  width: 60%;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,8 +141,6 @@ a:hover {
 }
 
 .card {
-  width: 60%;
-  margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;;
 }
@@ -112,7 +162,6 @@ a:hover {
 }
 
 .divider {
-  width: 60%;
   margin-top: 20px;
   margin-bottom: 20px;
 }

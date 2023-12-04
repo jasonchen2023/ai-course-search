@@ -2,15 +2,22 @@ import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
 import { useDispatch } from 'react-redux';
 import SearchBar from './search_bar';
-import sendQuery from '../services/query';
-import CourseCard from './card';
 import CourseList from './course_list';
 import Header from './header';
 import Filter from './filter';
 
 const App = (props) => {
   const [courseList, setCourseList] = useState([]);
+  const [filters, setFilters] = useState([]);
 
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
+
+
+  const updateFilter = (updatedFilter) => {
+    setFilters(updatedFilter);
+  };
 
   const search = async (searchQuery) => {
     const data = {
@@ -51,11 +58,11 @@ const App = (props) => {
   const debouncedSearch = useCallback(debounce(search, 500), []);
 
   return (
-    <div>
+    <div id="container">
       <Header />
       <div id="search-div">
         <SearchBar search={debouncedSearch} />
-        <Filter />
+        <Filter onFilterUpdate={updateFilter} />
       </div>
       <CourseList courses={courseList} />
     </div>
