@@ -7,3 +7,7 @@ export const DepartmentCodes = [
   'MALS', 'MATH', 'MES', 'MICR', 'MUS', 'NAIS', 'PBPL', 'PHIL', 'PHYS', 'PORT', 'PSYC', 'QBS', 'QSS', 'RAD', 'REL', 'RUSS',
   'SART', 'SOCY', 'SPAN', 'SPEE', 'THEA', 'TUCK', 'UKRA', 'WGSS', 'WRIT',
 ];
+
+export const Distribs = ['ART', 'INT', 'LIT', 'QDS', 'SCI', 'SLA', 'SOC', 'TAS', 'TLA', 'TMV'];
+
+export const WorldCultures = ['CI', 'NW', 'W'];
