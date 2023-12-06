@@ -27,40 +27,10 @@ const App = (props) => {
       setSearchQuery(query);
       const data = {
         query,
-        k: 10,
+        k: 20,
         filter: filters.$or.length === 0 ? null : filters,
       };
       const res = await sendQuery(data);
-
-
-      console.log('search', data, res);
-
-      // const res = [
-      //   {
-      //     id: '489',
-      //     score: 0.815311491,
-      //     values: [],
-      //     metadata: {
-      //       'Course Number': 1,
-      //       Department: 'FREN',
-      //       Description: 'Studies in such aspects of the cultural heritage as French art, music, and history. Credit for this course is awarded students who have s'
-      //       Instructor: 'Maureen Doyle',
-      //       Title: 'Introductory French I',
-      //     },
-      //   },
-      //   {
-      //     id: '490',
-      //     score: 0.809830427,
-      //     values: [],
-      //     metadata: {
-      //       'Course Number': 2,
-      //       Department: 'FREN',
-      //       Description: '',
-      //       Instructor: 'Kelly McConnell',
-      //       Title: 'Introductory French II',
-      //     },
-      //   },
-      // ];
       setCourseList(res);
     }
   };
@@ -76,6 +46,10 @@ const App = (props) => {
     <div id="container">
       <Header />
       <div id="search-div">
+        <SearchBar search={debouncedSearch} />
+        <Filter onFilterUpdate={updateFilter} />
+      </div>
+      <div id="search-div-mobile">
         <SearchBar search={debouncedSearch} />
         <Filter onFilterUpdate={updateFilter} />
       </div>

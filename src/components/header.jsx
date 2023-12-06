@@ -1,9 +1,10 @@
 import React from 'react';
+import searchIcon from '../assets/search.png';
 
 const Header = () => {
   return (
     <div id="header">
-      <h1 id="website-name"><span className="green-text">Dart</span>Search 🔍</h1>
+      <h1 id="website-name"><span className="green-text">Dart</span>Search<img src={searchIcon} id="search-icon" alt="Search Icon" /></h1>
       <p>A smarter way to discover classes at <a aria-label="Dartmouth link" href="https://dartmouth.edu" target="_blank" rel="noreferrer"><span className="green-text">Dartmouth College</span></a>.
       </p>
       <br />

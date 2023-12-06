@@ -16,8 +16,13 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div id="search-bar">
-      <input onChange={onInputChange} onKeyPress={onEnterPress} value={searchterm} placeholder="Search..." />
+    <div id="search-bar-container">
+      <div id="search-bar">
+        <input onChange={onInputChange} onKeyPress={onEnterPress} value={searchterm} placeholder="Search..." />
+      </div>
+      <div id="search-bar-mobile">
+        <input onChange={onInputChange} onKeyPress={onEnterPress} value={searchterm} placeholder="Search..." />
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const CourseList = (props) => {
   const { courses } = props; // Renamed to 'courses'
   const courseItems = courses.map((course) => {
     return (
-      <div>
+      <div key={course.id}>
         <hr className="divider" />
         <CourseCard
           key={course.id} // Make sure to use a unique key for each course
@@ -13,6 +13,9 @@ const CourseList = (props) => {
           courseNumber={course.metadata['Course Number']}
           title={course.metadata.Title}
           instructor={course.metadata.Instructor}
+          worldCulture={course.metadata.WC}
+          distrib={course.metadata.Dist}
+          period={course.metadata['Period Code']}
           description={course.metadata.Description}
         />
       </div>
