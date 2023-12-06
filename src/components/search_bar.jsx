@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 
 const SearchBar = (props) => {
   const [searchterm, setSearchTerm] = useState('');
-  // add this above your return
+
   const onInputChange = (event) => {
     setSearchTerm(event.target.value);
     props.search(event.target.value);

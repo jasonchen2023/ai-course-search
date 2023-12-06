@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
-import { useDispatch } from 'react-redux';
 import SearchBar from './search_bar';
 import CourseList from './course_list';
 import Header from './header';

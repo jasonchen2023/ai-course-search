@@ -2,13 +2,13 @@ import React from 'react';
 import CourseCard from './card';
 
 const CourseList = (props) => {
-  const { courses } = props; // Renamed to 'courses'
+  const { courses } = props;
   const courseItems = courses.map((course) => {
     return (
       <div key={course.id}>
         <hr className="divider" />
         <CourseCard
-          key={course.id} // Make sure to use a unique key for each course
+          key={course.id}
           department={course.metadata.Department}
           courseNumber={course.metadata['Course Number']}
           title={course.metadata.Title}
