@@ -5,12 +5,14 @@ import CourseList from './course_list';
 import Header from './header';
 import Filter from './filter';
 import sendQuery from '../services/query';
+import loadingGif from '../assets/loading.gif';
 
 const App = (props) => {
   const [courseList, setCourseList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   /* eslint-disable quote-props */
   const [filters, setFilters] = useState({ '$or': [] });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     console.log(filters);
@@ -24,12 +26,14 @@ const App = (props) => {
   const search = async (query) => {
     if (query !== '') {
       setSearchQuery(query);
+      setLoading(true);
       const data = {
         query,
         k: 20,
         filter: filters.$or.length === 0 ? null : filters,
       };
       const res = await sendQuery(data);
+      setLoading(false);
       setCourseList(res);
     }
   };
@@ -53,7 +57,8 @@ const App = (props) => {
         <Filter onFilterUpdate={updateFilter} />
       </div>
       <p className="footnote">*Showing 24W Courses</p>
-      <CourseList courses={courseList} />
+      {loading && <div id="loadingDiv"><img id="loadingGif" src={loadingGif} alt="Loading..." /></div>}
+      {!loading && <CourseList courses={courseList} />}
     </div>
   );
 };
