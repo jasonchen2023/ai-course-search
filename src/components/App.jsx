@@ -29,16 +29,9 @@ const App = (props) => {
       setSearchQuery(query);
       setLoading(true);
 
-      ReactGA.send({
-        hitType: 'event',
-        eventCategory: 'Search',
-        eventAction: 'Performed',
-        eventLabel: query,
-      });
-
       ReactGA.event({
         category: 'Search',
-        action: 'Performed',
+        action: 'search',
         label: query,
       });
 
