@@ -32,7 +32,6 @@ const App = (props) => {
       ReactGA.event({
         category: 'Search',
         action: 'search',
-        label: query,
       });
 
       const data = {
