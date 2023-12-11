@@ -1,4 +1,4 @@
-export const PeriodCodes = ['2A', '11', '3B', '10', '10A', '12', '6B', '2', 'ARR', '9L', '3A', 'FS', '9S', 'OT', 'LS', '8S'];
+export const PeriodCodes = ['9L', '9S', '10', '10A', '11', '12', '2', '2A', '3A', '3B', '6B', 'ARR', 'FS', 'LS', 'OT'];
 
 export const DepartmentCodes = [
   'AAAS', 'ANTH', 'ARAB', 'ARTH', 'ASCL', 'ASTR', 'BIOC', 'BIOL', 'CANB', 'CHEM', 'CHIN', 'CLST', 'COCO', 'COGS', 'COLT',

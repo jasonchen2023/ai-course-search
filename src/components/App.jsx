@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
+import ReactGA from 'react-ga4';
 import SearchBar from './search_bar';
 import CourseList from './course_list';
 import Header from './header';
@@ -27,6 +28,20 @@ const App = (props) => {
     if (query !== '') {
       setSearchQuery(query);
       setLoading(true);
+
+      ReactGA.send({
+        hitType: 'event',
+        eventCategory: 'Search',
+        eventAction: 'Performed',
+        eventLabel: query,
+      });
+
+      ReactGA.event({
+        category: 'Search',
+        action: 'Performed',
+        label: query,
+      });
+
       const data = {
         query,
         k: 20,
