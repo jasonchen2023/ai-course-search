@@ -1,6 +1,6 @@
 # DartSearch🔍
 
-**https://dartsearch.onrender.com/**
+**https://dartsearch.xyz/**
 
 A smarter way to discover classes at Dartmouth College 🌲.
 
